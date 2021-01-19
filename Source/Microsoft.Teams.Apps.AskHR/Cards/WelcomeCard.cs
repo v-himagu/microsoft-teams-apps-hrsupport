@@ -45,7 +45,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                               Type = ActionTypes.MessageBack,
                               DisplayText = Resource.TakeATourButtonText,
-                              Text = AskHRBot.TakeATour
+                              Text = Resource.TakeATourButtonText
                             }
                         },
                     }

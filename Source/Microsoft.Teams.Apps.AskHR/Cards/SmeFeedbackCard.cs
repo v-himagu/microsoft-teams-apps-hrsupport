@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Bot.Schema.Teams;
@@ -40,7 +41,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                    },
                    new AdaptiveTextBlock()
                    {
-                       Text = string.Format(Resource.FeedbackAlertText, userDetails.Name),
+                       Text = string.Format(CultureInfo.InvariantCulture, Resource.FeedbackAlertText, userDetails.Name),
                        Wrap = true,
                    },
                    new AdaptiveTextBlock()
@@ -60,7 +61,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                {
                    new AdaptiveOpenUrlAction
                    {
-                       Title = string.Format(Resource.ChatTextButton, userDetails.GivenName),
+                       Title = string.Format(CultureInfo.InvariantCulture, Resource.ChatTextButton, userDetails.GivenName),
                        UrlString = $"https://teams.microsoft.com/l/chat/0/0?users={Uri.EscapeDataString(userDetails.UserPrincipalName)}"
                    }
                }
@@ -132,7 +133,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                 throw new ArgumentException($"{rating} is not a valid rating value", nameof(rating));
             }
 
-            return Resource.ResourceManager.GetString($"{rating}RatingText");
+            return Resource.ResourceManager.GetString($"{rating}RatingText", CultureInfo.InvariantCulture);
         }
     }
 }

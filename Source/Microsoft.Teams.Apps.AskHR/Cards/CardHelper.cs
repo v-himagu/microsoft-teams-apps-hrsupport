@@ -5,6 +5,7 @@
 namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
+    using System.Globalization;
     using Microsoft.Teams.Apps.AskHR.Common.Models;
     using Microsoft.Teams.Apps.AskHR.Properties;
 
@@ -75,7 +76,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
             if (ticket.Status == (int)TicketState.Open)
             {
                 return ticket.IsAssigned() ?
-                    string.Format(Resource.SMETicketAssignedStatus, ticket.AssignedToName) :
+                    string.Format(CultureInfo.InvariantCulture, Resource.SMETicketAssignedStatus, ticket.AssignedToName) :
                     Resource.SMETicketUnassignedStatus;
             }
             else

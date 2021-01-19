@@ -57,7 +57,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.AskAnExpertDisplayText,
-                                Text = AskHRBot.AskAnExpert,
+                                Text = Resource.AskAnExpertDisplayText,
                             },
                             UserQuestion = userQuestion,
                             KnowledgeBaseAnswer = answer,
@@ -72,7 +72,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                             {
                                 Type = ActionTypes.MessageBack,
                                 DisplayText = Resource.ShareFeedbackDisplayText,
-                                Text = AskHRBot.ShareFeedback,
+                                Text = Resource.ShareFeedbackDisplayText,
                             },
                             UserQuestion = userQuestion,
                             KnowledgeBaseAnswer = answer,

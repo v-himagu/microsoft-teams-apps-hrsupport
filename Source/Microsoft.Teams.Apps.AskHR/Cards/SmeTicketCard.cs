@@ -6,6 +6,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Microsoft.Teams.Apps.AskHR.Common.Models;
@@ -54,7 +55,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     },
                     new AdaptiveTextBlock
                     {
-                        Text = string.Format(Resource.QuestionForExpertSubHeaderText, this.Ticket.RequesterName),
+                        Text = string.Format(CultureInfo.InvariantCulture, Resource.QuestionForExpertSubHeaderText, this.Ticket.RequesterName),
                         Wrap = true,
                     },
                     new AdaptiveFactSet
@@ -95,6 +96,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                     {
                         new AdaptiveSubmitAction
                         {
+                            Title = Resource.SubmitButtonText,
                             Data = new ChangeTicketStatusPayload { TicketId = this.Ticket.TicketId }
                         }
                     },
@@ -129,12 +131,12 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
         /// <returns>Adaptive card action for starting chat with user</returns>
         protected AdaptiveAction CreateChatWithUserAction()
         {
-            var messageToSend = string.Format(Resource.SMEUserChatMessage, this.Ticket.Title);
+            var messageToSend = string.Format(CultureInfo.InvariantCulture, Resource.SMEUserChatMessage, this.Ticket.Title);
             var encodedMessage = Uri.EscapeDataString(messageToSend);
 
             return new AdaptiveOpenUrlAction
             {
-                Title = string.Format(Resource.ChatTextButton, this.Ticket.RequesterGivenName),
+                Title = string.Format(CultureInfo.InvariantCulture, Resource.ChatTextButton, this.Ticket.RequesterGivenName),
                 Url = new Uri($"https://teams.microsoft.com/l/chat/0/0?users={Uri.EscapeDataString(this.Ticket.RequesterUserPrincipalName)}&message={encodedMessage}")
             };
         }
