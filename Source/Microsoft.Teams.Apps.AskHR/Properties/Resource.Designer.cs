@@ -106,6 +106,15 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QuestionForExpert.
+        /// </summary>
+        public static string AskAnExpertSubmitText {
+            get {
+                return ResourceManager.GetString("AskAnExpertSubmitText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ask an expert.
         /// </summary>
         public static string AskAnExpertText1 {
@@ -642,6 +651,15 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
         public static string ShareFeedbackDisplayText {
             get {
                 return ResourceManager.GetString("ShareFeedbackDisplayText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareFeedback.
+        /// </summary>
+        public static string ShareFeedbackSubmitText {
+            get {
+                return ResourceManager.GetString("ShareFeedbackSubmitText", resourceCulture);
             }
         }
         
