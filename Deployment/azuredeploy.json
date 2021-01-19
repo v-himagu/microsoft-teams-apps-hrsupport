@@ -114,6 +114,20 @@
         "description": "The pricing tier for the QnAMaker service."
       }
     },
+    "defaultCulture": {
+      "type": "string",
+      "allowedValues": [
+        "en",
+        "fr",
+        "ja",
+        "es",
+        "ar"
+      ],
+      "defaultValue": "en",
+      "metadata": {
+        "description": "Default localization for app."
+      }
+    },
     "searchServiceSku": {
       "type": "string",
       "allowedValues": [
@@ -279,9 +293,17 @@
               "name": "SearchIndexingIntervalInMinutes",
               "value": "10"
             },
-             {
+            {
               "name": "WEBSITE_NODE_DEFAULT_VERSION",
               "value": "10.15.2"
+            },
+            {
+              "name": "i18n:DefaultCulture",
+              "value": "[parameters('defaultCulture')]"
+            },
+            {
+              "name": "i18n:SupportedCultures",
+              "value": "en,fr,es,ja,ar"
             }
           ]
         }
